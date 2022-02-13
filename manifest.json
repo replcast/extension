@@ -1,7 +1,7 @@
 {
   "name": "ReplCast",
   "description": "Live share your Repl coding - a great tool for Hack Clubbers and beyond!",
-  "version": "1.0",
+  "version": "1.1",
   "manifest_version": 3,
   "icons": {
     "16": "assets/icon16.png",

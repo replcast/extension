@@ -1,3 +1,6 @@
+console.clear();
+console.log("ReplCast is starting...");
+chrome.storage.local.set({ currentCast: "" });
 const enabledPages = ["https://repl.it/*", "https://replit.com/*"];
 import { io } from "./assets/socketio.min.js";
 let castId = null;
@@ -11,6 +14,7 @@ let socket = io(
 );
 
 const startCast = () => {
+  socket.disconnect();
   console.log("Starting cast");
   socket.connect();
 };
@@ -63,10 +67,13 @@ socket.on("disconnect", () => {
 
 socket.on("castId", (e) => {
   castId = e.id;
-  console.log("castId", e.id);
-  chrome.storage.local.set({ currentCast: e.id });
-  chrome.runtime.sendMessage({
-    type: "copyCode",
-    id: e.id,
+  console.log("Cast ID", e.id);
+  chrome.storage.local.set({ currentCast: e.id }, () => {
+    chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+      chrome.tabs.sendMessage(tabs[0].id, {
+        type: "copyCode",
+        id: e.id,
+      });
+    });
   });
 });
