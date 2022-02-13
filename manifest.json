@@ -1,0 +1,26 @@
+{
+  "name": "ReplCast",
+  "description": "Live share your Repl coding - a great tool for Hack Clubbers and beyond!",
+  "version": "1.0",
+  "manifest_version": 3,
+  "icons": {
+    "16": "assets/icon16.png",
+    "48": "assets/icon48.png",
+    "128": "assets/icon128.png"
+  },
+  "permissions": ["activeTab", "scripting", "contextMenus", "storage"],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "minimum_chrome_version": "92",
+  "content_scripts": [
+    {
+      "matches": ["https://replit.com/*", "https://repl.it/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  }
+}

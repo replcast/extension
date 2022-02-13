@@ -1,0 +1,91 @@
+@font-face {
+  font-family: "Miriam Libre Bold";
+  src: url("MiriamLibre-Bold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Miriam Libre";
+  src: url("MiriamLibre-Regular.ttf") format("truetype");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: max-content;
+  width: 300px;
+  background: #1f201c;
+  text-align: center;
+  font-family: "Miriam Libre", monospace;
+  color: white;
+}
+
+h1 {
+  margin: 1rem;
+  margin-bottom: 0.2rem;
+  font-size: 2rem;
+  color: white;
+  font-family: "Miriam Libre Bold", monospace;
+  user-select: none;
+  line-height: 1.1em;
+}
+
+.logo {
+  margin-top: 2rem;
+  fill: #42b983;
+  width: 4rem;
+  height: 4rem;
+}
+
+a {
+  color: #42b983;
+}
+
+p {
+  font-size: 1rem;
+}
+
+#code {
+  background-color: #23241f;
+  padding: 1rem 2rem;
+  padding-top: 0;
+  width: max-content;
+  margin: auto;
+  font-size: 2rem;
+  line-height: 1.1;
+  border-radius: 0.3rem;
+  cursor: pointer;
+}
+
+.descriptor {
+  font-variant: small-caps;
+  font-size: 0.8rem;
+  user-select: none;
+  opacity: 0.5;
+}
+
+p svg {
+  fill: white;
+  height: 0.7rem;
+  width: 0.7rem;
+  transform: translateY(0.1rem);
+  margin-left: 0.2rem;
+}
+
+.copy {
+  margin-top: 0.8rem;
+  font-size: 0.75rem;
+  cursor: pointer;
+  user-select: none;
+  margin-bottom: 2rem;
+}
+
+#start {
+  padding: 1.5rem;
+}
+
+#start p {
+  font-size: 0.8rem;
+}
